@@ -169,7 +169,7 @@ p {
 .survey {
   display: flex;
   flex-direction: column;
-  min-height: 450px;
+  min-height: 400px;
 }
 
 .question {
@@ -237,10 +237,9 @@ p {
 
 /* ------------------------------------------------------- */
 
-/* Logic for hiding/showing questions */
 .tab-content {
   .tab-content {
-  height: 220px;
+  height: 200px;
   display: none;
   overflow: hidden;
   padding: 20px;
@@ -252,10 +251,9 @@ p {
   display: block;
 }
 
-/* Pagination Styling to match your image */
 .pagination-wrap {
-  margin-top: 20px;
-  height: 50px; 
+  margin-top: auto;
+  padding-top: 20px;
 }
 
 .pagination-custom {
