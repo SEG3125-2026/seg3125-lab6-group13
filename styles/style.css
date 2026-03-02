@@ -5,10 +5,9 @@ html, body {
 
 body {
   margin: 0;
-  background:
-    radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
-    linear-gradient(180deg, #faf8f6 0%, #f2f0ef 100%);
-  background-size: 18px 18px, auto;
+  background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-color: #faf8f6; 
+  background-size: 18px 18px;
 }
 
 /* Typography */
