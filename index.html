@@ -59,72 +59,119 @@
 
   <h3 class="section-title">Survey Questions</h3>
 
-  <form class="survey" action="#" method="post">
+  <h3 class="section-title">Survey Questions</h3>
 
-    <div class="question">
-      <label for="usecase">1) What do you mainly use YouTube for?</label>
-      <input type="text" id="usecase" name="usecase" placeholder="e.g., study, music, entertainment" required>
+  <form class="survey" id="surveyForm" action="#" method="post">
+    
+    <div id="tab1" class="tab-content active">
+      <div class="question">
+        <label for="usecase">1) What do you mainly use YouTube for?</label>
+        <input type="text" id="usecase" name="usecase" placeholder="e.g., study, music, entertainment" required>
+      </div>
     </div>
 
-    <div class="question">
-      <p>2) How easy is it to understand the layout of the YouTube homepage?</p>
-      <label><input type="radio" name="layout_easy" value="very_easy" required> Very easy</label><br>
-      <label><input type="radio" name="layout_easy" value="easy"> Easy</label><br>
-      <label><input type="radio" name="layout_easy" value="neutral"> Neutral</label><br>
-      <label><input type="radio" name="layout_easy" value="hard"> Hard</label><br>
-      <label><input type="radio" name="layout_easy" value="very_hard"> Very hard</label>
+    <div id="tab2" class="tab-content">
+      <div class="question">
+        <p>2) How easy is it to understand the layout of the YouTube homepage?</p>
+        <label><input type="radio" name="layout_easy" value="very_easy"> Very easy</label><br>
+        <label><input type="radio" name="layout_easy" value="easy"> Easy</label><br>
+        <label><input type="radio" name="layout_easy" value="neutral"> Neutral</label><br>
+        <label><input type="radio" name="layout_easy" value="hard"> Hard</label><br>
+        <label><input type="radio" name="layout_easy" value="very_hard"> Very hard</label>
+      </div>
     </div>
 
-    <div class="question">
-      <label for="rating">3) Overall visual design rating (1-5):</label>
-      <select id="rating" name="rating" required>
-        <option value="" disabled selected>Select one</option>
-        <option value="1">1 - Poor</option>
-        <option value="2">2</option>
-        <option value="3">3 - OK</option>
-        <option value="4">4</option>
-        <option value="5">5 - Excellent</option>
-      </select>
+    <div id="tab3" class="tab-content">
+      <div class="question">
+        <label for="rating">3) Overall visual design rating (1-5):</label>
+        <select id="rating" name="rating">
+          <option value="" disabled selected>Select one</option>
+          <option value="1">1 - Poor</option>
+          <option value="2">2</option>
+          <option value="3">3 - OK</option>
+          <option value="4">4</option>
+          <option value="5">5 - Excellent</option>
+        </select>
+      </div>
     </div>
 
-    <div class="question">
-      <p>4) Which parts should be improved? (Select all that apply)</p>
-      <label><input type="checkbox" name="improve[]" value="sidebar"> Navigation sidebar</label><br>
-      <label><input type="checkbox" name="improve[]" value="search"> Search bar</label><br>
-      <label><input type="checkbox" name="improve[]" value="recommendations"> Recommendations</label><br>
-      <label><input type="checkbox" name="improve[]" value="thumbnails"> Video thumbnails</label><br>
-      <label><input type="checkbox" name="improve[]" value="ads"> Ads placement</label><br>
-      <label><input type="checkbox" name="improve[]" value="comments"> Comments section</label>
+    <div id="tab4" class="tab-content">
+      <div class="question">
+        <p>4) Which parts should be improved? (Select all that apply)</p>
+        <label><input type="checkbox" name="improve[]" value="sidebar"> Navigation sidebar</label><br>
+        <label><input type="checkbox" name="improve[]" value="search"> Search bar</label><br>
+        <label><input type="checkbox" name="improve[]" value="recommendations"> Recommendations</label><br>
+        <label><input type="checkbox" name="improve[]" value="thumbnails"> Video thumbnails</label><br>
+        <label><input type="checkbox" name="improve[]" value="ads"> Ads placement</label><br>
+        <label><input type="checkbox" name="improve[]" value="comments"> Comments section</label>
+      </div>
     </div>
 
-    <div class="question">
-      <p>5) Can you quickly find the content you want?</p>
-      <label><input type="radio" name="find_content" value="yes" required> Yes</label><br>
-      <label><input type="radio" name="find_content" value="sometimes"> Sometimes</label><br>
-      <label><input type="radio" name="find_content" value="no"> No</label>
+    <div id="tab5" class="tab-content">
+      <div class="question">
+        <p>5) Can you quickly find the content you want?</p>
+        <label><input type="radio" name="find_content" value="yes"> Yes</label><br>
+        <label><input type="radio" name="find_content" value="sometimes"> Sometimes</label><br>
+        <label><input type="radio" name="find_content" value="no"> No</label>
+      </div>
     </div>
 
-    <div class="question">
-      <label for="comments">6) Additional comments:</label>
-      <textarea id="comments" name="comments" rows="5" placeholder="Write your comments here..."></textarea>
+    <div id="tab6" class="tab-content">
+      <div class="question">
+        <label for="comments">6) Additional comments:</label>
+        <textarea id="comments" name="comments" rows="5" placeholder="Write your comments here..."></textarea>
+      </div>
     </div>
 
-    <div class="question submit-area">
+    <div class="pagination-wrap">
+      <ul class="pagination-custom">
+        <li><a href="javascript:void(0)" onclick="changeTab(-1)">Previous</a></li>
+        <li><a href="javascript:void(0)" onclick="showTab(1)">Q1</a></li>
+        <li><a href="javascript:void(0)" onclick="showTab(2)">Q2</a></li>
+        <li><a href="javascript:void(0)" onclick="showTab(3)">Q3</a></li>
+        <li><a href="javascript:void(0)" onclick="showTab(4)">Q4</a></li>
+        <li><a href="javascript:void(0)" onclick="showTab(5)">Q5</a></li>
+        <li><a href="javascript:void(0)" onclick="showTab(6)">Q6</a></li>
+        <li><a href="javascript:void(0)" onclick="changeTab(1)">Next</a></li>
+      </ul>
+    </div>
+
+    <div class="question submit-area" id="submitArea" style="display: none; border: none; background: transparent;">
       <button type="submit">Submit Questionnaire</button>
     </div>
 
-    <div class="container mt-3">
-      <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="#">Q1</a></li>
-        <li class="page-item"><a class="page-link" href="#">Q2</a></li>
-        <li class="page-item"><a class="page-link" href="#">Q3</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-      </ul>
-    </div>
+  </form>
 
   </form>
   <p id="signature">Site created by Conall McCooeye - Yann Giffaux - Hengjing Zhang</p>
 
 </body>
+
+<script>
+  let currentTab = 1;
+  const totalTabs = 6;
+
+  function showTab(n) {
+    const tabs = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].classList.remove("active");
+    }
+    
+    document.getElementById("tab" + n).classList.add("active");
+    currentTab = n;
+
+    const submitArea = document.querySelector(".submit-area");
+    submitArea.style.display = (n === totalTabs) ? "block" : "none";
+  }
+
+  function changeTab(step) {
+    let newTab = currentTab + step;
+    if (newTab >= 1 && newTab <= totalTabs) {
+      showTab(newTab);
+    }
+  }
+
+  showTab(1);
+</script>
+  
 </html>
