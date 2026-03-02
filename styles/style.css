@@ -172,6 +172,7 @@ p {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .question {
@@ -179,6 +180,7 @@ p {
   background: transparent;
   padding: 0;
   margin: 0;
+  text-align: left;
 }
 
 .question input[type="checkbox"],
@@ -239,7 +241,8 @@ p {
 
 .tab-content {
   display: none;
-  height: 280px; 
+  width: 100%;
+  height: 220px;
   background: white;
   border: 1px solid #ddd;
   border-radius: 12px;
@@ -247,6 +250,7 @@ p {
   margin: 12px 0;
   box-sizing: border-box;
   overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
   
 .tab-content.active {
@@ -254,6 +258,8 @@ p {
 }
 
 .pagination-wrap, .submit-area {
+  width: 100%;
+  text-align: center;
   margin-top: 10px;
 }
 
