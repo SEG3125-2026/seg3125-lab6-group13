@@ -257,7 +257,7 @@ p {
   display: block;
 }
 
-button, input, select, textarea, .pagination-custom li a, .submit-area button, label, span, .question p {
+button, input, select, textarea, .pagination-custom li a, .submit-area button {
   font-family: "Arial Rounded MT Bold", Arial, sans-serif !important;
 }
 
