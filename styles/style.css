@@ -249,12 +249,16 @@ p {
   padding: 20px;
   margin: 12px 0;
   box-sizing: border-box;
-  overflow: visible
+  overflow: visible;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
   
 .tab-content.active {
   display: block;
+}
+
+button, input, select, textarea, .pagination-custom li a, .submit-area button {
+  font-family: "Arial Rounded MT Bold", Arial, sans-serif !important;
 }
 
 .pagination-wrap {
@@ -287,13 +291,22 @@ p {
   border-right: none;
 }
 
-button, input, select, textarea, .pagination-custom li a {
-  font-family: "Arial Rounded MT Bold", Arial, sans-serif !important;
+.pagination-custom li a {
+  display: block;
+  padding: 12px 18px;
+  text-decoration: none;
+  font-size: 16px;
+  color: black; 
+  transition: background 0.2s;
 }
 
 .pagination-custom li a.active-link {
   background-color: #8F001A !important;
   color: white !important;
+}
+
+.pagination-custom li a:hover {
+  background-color: #eee;
 }
 
 .submit-area button {
