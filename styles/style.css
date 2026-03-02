@@ -239,7 +239,6 @@ p {
 
 /* ------------------------------------------------------- */
 
-/* Logic for hiding/showing questions */
 .tab-content {
   display: none;
   width: 100%;
@@ -258,7 +257,6 @@ p {
   display: block;
 }
 
-/* Pagination Styling to match your image */
 .pagination-wrap {
   text-align: center;
   margin: 10px 0;
