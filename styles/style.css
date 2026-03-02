@@ -36,20 +36,6 @@ p {
   color: black;
 }
 
-/* Banner */
-.banner {
-  background-color: #8F001A;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 14px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-}
-
-.banner p {
-  font-size: 18px;
-  color: white;
-}
-
 /* Link section */
 .website-link {
   margin: 12px 0 12px 0;
