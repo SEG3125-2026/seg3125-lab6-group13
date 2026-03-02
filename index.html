@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles/style.css" rel="stylesheet" type="text/css">
+  <title>SEG3125 Lab #1: Group 13</title>
+</head>
+
+<body>
+
+  <div class="banner">
+    <h1>LAB #1</h1>
+    <p>Construction of a Survey’s User Interface</p>
+  </div>
+
+  <h2>Survey Regarding the User Interface of: YouTube</h2>
+
+  <p class="website-link">
+    Website:
+    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+      https://www.youtube.com/
+    </a>
+  </p>
+
+  <div class="gallery-wrap">
+    <h3 class="section-title">Screenshots (click to preview)</h3>
+
+    <div class="gallery">
+      <!-- Home -->
+      <a class="thumb" href="#img-home">
+        <img src="images/youtube_home.png" alt="YouTube Homepage Screenshot">
+        <span class="thumb-caption">Homepage</span>
+      </a>
+
+      <!-- Watch -->
+      <a class="thumb" href="#img-watch">
+        <img src="images/youtube_watch.png" alt="YouTube Watch Page Screenshot">
+        <span class="thumb-caption">Watch Page</span>
+      </a>
+
+      <!-- Search -->
+      <a class="thumb" href="#img-search">
+        <img src="images/youtube_search.png" alt="YouTube Search Results Screenshot">
+        <span class="thumb-caption">Search Results</span>
+      </a>
+    </div>
+  </div>
+
+  <div id="img-home" class="lightbox">
+    <a class="close" href="#"></a>
+    <img src="images/youtube_home.png" alt="YouTube Homepage Screenshot Large">
+  </div>
+
+  <div id="img-watch" class="lightbox">
+    <a class="close" href="#"></a>
+    <img src="images/youtube_watch.png" alt="YouTube Watch Page Screenshot Large">
+  </div>
+
+  <div id="img-search" class="lightbox">
+    <a class="close" href="#"></a>
+    <img src="images/youtube_search.png" alt="YouTube Search Results Screenshot Large">
+  </div>
+
+  <h3 class="section-title">Survey Questions</h3>
+
+  <form class="survey" action="#" method="post">
+
+    <div class="question">
+      <label for="usecase">1) What do you mainly use YouTube for?</label>
+      <input type="text" id="usecase" name="usecase" placeholder="e.g., study, music, entertainment" required>
+    </div>
+
+    <div class="question">
+      <p>2) How easy is it to understand the layout of the YouTube homepage?</p>
+      <label><input type="radio" name="layout_easy" value="very_easy" required> Very easy</label><br>
+      <label><input type="radio" name="layout_easy" value="easy"> Easy</label><br>
+      <label><input type="radio" name="layout_easy" value="neutral"> Neutral</label><br>
+      <label><input type="radio" name="layout_easy" value="hard"> Hard</label><br>
+      <label><input type="radio" name="layout_easy" value="very_hard"> Very hard</label>
+    </div>
+
+    <div class="question">
+      <label for="rating">3) Overall visual design rating (1-5):</label>
+      <select id="rating" name="rating" required>
+        <option value="" disabled selected>Select one</option>
+        <option value="1">1 - Poor</option>
+        <option value="2">2</option>
+        <option value="3">3 - OK</option>
+        <option value="4">4</option>
+        <option value="5">5 - Excellent</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <p>4) Which parts should be improved? (Select all that apply)</p>
+      <label><input type="checkbox" name="improve[]" value="sidebar"> Navigation sidebar</label><br>
+      <label><input type="checkbox" name="improve[]" value="search"> Search bar</label><br>
+      <label><input type="checkbox" name="improve[]" value="recommendations"> Recommendations</label><br>
+      <label><input type="checkbox" name="improve[]" value="thumbnails"> Video thumbnails</label><br>
+      <label><input type="checkbox" name="improve[]" value="ads"> Ads placement</label><br>
+      <label><input type="checkbox" name="improve[]" value="comments"> Comments section</label>
+    </div>
+
+    <div class="question">
+      <p>5) Can you quickly find the content you want?</p>
+      <label><input type="radio" name="find_content" value="yes" required> Yes</label><br>
+      <label><input type="radio" name="find_content" value="sometimes"> Sometimes</label><br>
+      <label><input type="radio" name="find_content" value="no"> No</label>
+    </div>
+
+    <div class="question">
+      <label for="comments">6) Additional comments:</label>
+      <textarea id="comments" name="comments" rows="5" placeholder="Write your comments here..."></textarea>
+    </div>
+
+    <div class="question submit-area">
+      <button type="submit">Submit Questionnaire</button>
+    </div>
+
+  </form>
+  <p id="signature">Site created by Conall McCooeye - Yann Giffaux - Hengjing Zhang</p>
+
+</body>
+</html>

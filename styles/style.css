@@ -1,0 +1,229 @@
+/* Page background */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(180deg, #faf8f6 0%, #f2f0ef 100%);
+  background-size: 18px 18px, auto;
+}
+
+/* Typography */
+h1 {
+  font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+  font-size: 60px;
+  text-align: center;
+  margin: 0 0 5px 0;
+  color: white;
+}
+
+h2 {
+  font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+  font-size: 18px;
+  text-align: center;
+  margin: 10px 0 5px 0;
+  color: black;
+}
+
+p {
+  font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+  color: black;
+}
+
+/* Banner */
+.banner {
+  background-color: #8F001A;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.banner p {
+  font-size: 18px;
+  color: white;
+}
+
+/* Link section */
+.website-link {
+  margin: 12px 0 12px 0;
+}
+
+/* Section titles (default: aligned with survey width) */
+.section-title {
+  width: 70%;
+  max-width: 900px;
+  margin: 18px auto 10px auto;
+  text-align: left;
+  font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+  font-size: 16px;
+
+  padding-left: 10px;
+  border-left: 4px solid #8F001A;
+}
+
+/* When section title is inside gallery-wrap, align to gallery container */
+.gallery-wrap .section-title {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 10px 0;   /* container handles centering */
+}
+
+/* Gallery grid */
+.gallery-wrap {
+  width: 70%;
+  max-width: 900px;
+  margin: 0 auto 18px auto;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.thumb {
+  display: block;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.thumb:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.10);
+}
+
+.thumb img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.thumb-caption {
+  display: block;
+  padding: 10px 12px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Responsive: 2 columns on medium screens, 1 on small */
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  .thumb img {
+    height: 200px;
+  }
+}
+
+/* Lightbox (CSS-only) */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.75);
+  padding: 24px;
+  z-index: 999;
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 95vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.3);
+  background: white;
+}
+
+/* Click outside to close */
+.lightbox .close {
+  position: absolute;
+  inset: 0;
+  cursor: default;
+}
+
+/* Survey layout */
+.survey {
+  width: 70%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.question {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px 0;
+  text-align: left;
+}
+
+.question label,
+.question p {
+  display: block;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.question input[type="text"],
+.question select,
+.question textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Submit button */
+.submit-area {
+  text-align: center;
+}
+
+.submit-area button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  background-color: #8F001A;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-area button:hover {
+  opacity: 0.9;
+}
+
+/* Signature */
+#signature {
+  margin: 30px 20px 20px 20px;
+  text-align: right;
+  color: black;
+  font-style: italic;
+  font-size: 75%;
+}
