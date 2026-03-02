@@ -170,15 +170,15 @@ p {
   width: 70%;
   max-width: 900px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .question {
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 16px;
-  margin: 12px 0;
-  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
 }
 
 .question input[type="checkbox"],
@@ -238,21 +238,27 @@ p {
 /* ------------------------------------------------------- */
 
 .tab-content {
-  height: 220px;
   display: none;
-  overflow: hidden;
-  padding: 20px;
+  height: 280px; 
+  background: white;
   border: 1px solid #ddd;
-  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 12px 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
   
 .tab-content.active {
   display: block;
 }
 
-.pagination-wrap {
-  text-align: center;
-  margin: 20px 0;
+.pagination-wrap, .submit-area {
+  margin-top: 10px;
+}
+
+.submit-area {
+  height: 50px;
 }
 
 .pagination-custom {
