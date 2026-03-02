@@ -249,7 +249,7 @@ p {
   padding: 20px;
   margin: 12px 0;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: visible
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
   
@@ -287,19 +287,24 @@ p {
   border-right: none;
 }
 
-.pagination-custom li a {
-  display: block;
-  padding: 10px 15px;
-  text-decoration: none;
-  font-family: "Arial Rounded MT Bold", Arial, sans-serif;
-  font-size: 14px;
-  color: #333; 
-  transition: background 0.2s;
+button, input, select, textarea, .pagination-custom li a {
+  font-family: "Arial Rounded MT Bold", Arial, sans-serif !important;
 }
 
 .pagination-custom li a.active-link {
   background-color: #8F001A !important;
   color: white !important;
+}
+
+.submit-area button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  background-color: #8F001A;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Arial Rounded MT Bold", Arial, sans-serif;
 }
 
 .pagination-custom li a:hover {
