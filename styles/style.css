@@ -182,6 +182,14 @@ p {
   text-align: left;
 }
 
+.question input[type="checkbox"],
+.question input[type="radio"] {
+  accent-color: #8F001A;
+  transform: scale(1.1);
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
 .question label,
 .question p {
   display: block;
