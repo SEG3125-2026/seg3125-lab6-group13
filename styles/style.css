@@ -167,9 +167,9 @@ p {
 
 /* Survey layout */
 .survey {
-  display: flex;
-  flex-direction: column;
-  min-height: 450px;
+  width: 70%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .question {
@@ -238,7 +238,7 @@ p {
 /* ------------------------------------------------------- */
 
 .tab-content {
-  height: 200px;
+  height: 220px;
   display: none;
   overflow: hidden;
   padding: 20px;
@@ -251,8 +251,8 @@ p {
 }
 
 .pagination-wrap {
-  margin-top: 20px;
-  height: 50px; 
+  text-align: center;
+  margin: 20px 0;
 }
 
 .pagination-custom {
