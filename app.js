@@ -83,4 +83,13 @@ app.post("/api/responses", (req, res) => {
   }
 });
 
+app.delete("/api/responses", (req, res) => {
+  try {
+    writeResponses([]);
+    return res.json({ message: "All responses were cleared successfully." });
+  } catch (error) {
+    return res.status(500).json({ message: "Unable to clear saved responses." });
+  }
+});
+
 module.exports = app;
