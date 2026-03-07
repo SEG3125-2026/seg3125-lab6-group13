@@ -1,4 +1,5 @@
 const analyticsMessage = document.getElementById("analyticsMessage");
+const clearResponsesButton = document.getElementById("clearResponsesButton");
 const statsGrid = document.getElementById("statsGrid");
 const responsesBody = document.getElementById("responsesBody");
 const layoutPie = document.getElementById("layoutPie");
@@ -29,15 +30,27 @@ const labels = {
 
 const pieColors = ["#8f001a", "#d94f70", "#f2b8c6"];
 
+function showMessage(text, type = "") {
+  analyticsMessage.textContent = text;
+  analyticsMessage.className = type
+    ? `form-message ${type} analytics-message`
+    : "form-message analytics-message";
+}
+
 function setAnalyticsMessage() {
   const params = new URLSearchParams(window.location.search);
+
   if (params.get("submitted") === "1") {
-    analyticsMessage.textContent = "Your survey response was submitted successfully.";
-    analyticsMessage.className = "form-message success analytics-message";
+    showMessage("Your survey response was submitted successfully.", "success");
     return;
   }
-  analyticsMessage.textContent = "";
-  analyticsMessage.className = "form-message analytics-message";
+
+  if (params.get("cleared") === "1") {
+    showMessage("All survey responses were cleared successfully.", "success");
+    return;
+  }
+
+  showMessage("");
 }
 
 function countValues(items, allowedValues) {
@@ -216,8 +229,6 @@ function renderResponses(responses) {
 }
 
 async function loadAnalytics() {
-  setAnalyticsMessage();
-
   try {
     const response = await fetch("/api/responses");
     const payload = await response.json();
@@ -233,9 +244,37 @@ async function loadAnalytics() {
     renderImprovements(responses);
     renderResponses(responses);
   } catch (error) {
-    analyticsMessage.textContent = error.message || "Unable to load analytics data.";
-    analyticsMessage.className = "form-message error analytics-message";
+    showMessage(error.message || "Unable to load analytics data.", "error");
   }
 }
 
+async function clearResponses() {
+  const confirmed = window.confirm("Are you sure you want to delete all saved survey responses?");
+
+  if (!confirmed) {
+    return;
+  }
+
+  clearResponsesButton.disabled = true;
+
+  try {
+    const response = await fetch("/api/responses", {
+      method: "DELETE"
+    });
+
+    const payload = await response.json();
+
+    if (!response.ok) {
+      throw new Error(payload.message || "Unable to clear saved responses.");
+    }
+
+    window.location.href = "analytics.html?cleared=1";
+  } catch (error) {
+    showMessage(error.message || "Unable to clear saved responses.", "error");
+    clearResponsesButton.disabled = false;
+  }
+}
+
+clearResponsesButton.addEventListener("click", clearResponses);
+setAnalyticsMessage();
 loadAnalytics();
