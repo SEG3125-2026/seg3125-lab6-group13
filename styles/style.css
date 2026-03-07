@@ -160,6 +160,51 @@ p {
   margin: 0 auto;
 }
 
+
+.analytics-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.danger-button {
+  display: inline-block;
+  padding: 12px 18px;
+  border: none;
+  background-color: #5f0c1b;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.danger-button:hover,
+.danger-button:focus-visible {
+  background-color: #7a1125;
+  outline: none;
+}
+
+.danger-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  background-color: white;
+  color: #666;
+}
+
+@media (max-width: 700px) {
+  .analytics-toolbar {
+    flex-direction: column;
+  }
+
+  .danger-button {
+    width: 100%;
+  }
+}
+
 .survey {
   display: flex;
   flex-direction: column;
