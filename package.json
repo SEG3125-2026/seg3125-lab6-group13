@@ -1,0 +1,12 @@
+{
+  "name": "seg3125-lab6-group13",
+  "version": "1.0.0",
+  "description": "SEG3125 Lab 6 survey with analytics dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
