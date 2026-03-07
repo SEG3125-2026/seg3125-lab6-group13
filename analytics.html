@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles/style.css" rel="stylesheet" type="text/css">
+  <title>SEG3125 Lab 6 - Analytics View</title>
+</head>
+<body>
+  <a class="view-switch" href="index.html">Client View</a>
+
+  <div class="banner">
+    <h1>YouTube Survey Analytics</h1>
+    <p>SEG3125 Lab 6: Group 13</p>
+  </div>
+
+  <main class="analytics-page">
+    <div id="analyticsMessage" class="form-message analytics-message" role="status" aria-live="polite"></div>
+
+    <section class="analytics-section">
+      <h2 class="section-title analytics-title">Overview</h2>
+      <div class="stats-grid" id="statsGrid"></div>
+    </section>
+
+    <section class="analytics-section">
+      <h2 class="section-title analytics-title">Charts</h2>
+      <div class="chart-grid">
+        <article class="chart-card">
+          <h3>Navigation Difficulty</h3>
+          <div id="layoutPie" class="pie-chart" aria-hidden="true"></div>
+          <div id="layoutLegend" class="chart-legend"></div>
+          <p id="layoutSummary" class="chart-summary"></p>
+        </article>
+
+        <article class="chart-card">
+          <h3>Visual Design Ratings</h3>
+          <div id="ratingBars" class="bar-list"></div>
+          <p id="ratingSummary" class="chart-summary"></p>
+        </article>
+
+        <article class="chart-card chart-card-wide">
+          <h3>Requested Improvements</h3>
+          <div id="improvementBars" class="bar-list"></div>
+          <p id="improvementSummary" class="chart-summary"></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="analytics-section">
+      <h2 class="section-title analytics-title">Incoming Answers</h2>
+      <div class="table-wrap">
+        <table class="responses-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Main Use</th>
+              <th>Layout</th>
+              <th>Rating</th>
+              <th>Improvements</th>
+              <th>Find Content</th>
+              <th>Comments</th>
+              <th>Submitted At</th>
+            </tr>
+          </thead>
+          <tbody id="responsesBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <p id="signature">Site created by Conall McCooeye - Yann Giffaux - Hengjing Zhang</p>
+
+  <script src="js/analytics.js"></script>
+</body>
+</html>
